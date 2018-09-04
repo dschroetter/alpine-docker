@@ -9,8 +9,10 @@ RUN apk update
 RUN apk add openssh-server
 
 ##
-## Add SSHD Service
+## Add SSHD configuration
 ##
+
+COPY config/sshd/sshd_config /etc/ssh/sshd_config
 
 ##
 ## INIT
