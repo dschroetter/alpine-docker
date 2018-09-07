@@ -13,7 +13,6 @@ RUN apk add --no-cache libressl openssh-server
 ##
 
 COPY config/sshd/sshd_config /etc/ssh/sshd_config
-COPY config/sshd/sshd_ciphers_config /etc/ssh/sshd_ciphers_config
 
 ##
 ## INIT
