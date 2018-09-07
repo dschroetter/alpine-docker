@@ -6,7 +6,7 @@ RUN tar xzf /tmp/s6-overlay-amd64.tar.gz -C /
 RUN rm /tmp/s6-overlay-amd64.tar.gz
 
 RUN apk update
-RUN apk add openssh-server
+RUN apk add --no-cache libressl openssh-server
 
 ##
 ## Add SSHD configuration
