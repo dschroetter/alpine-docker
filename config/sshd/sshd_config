@@ -31,7 +31,7 @@ HostKeyAlgorithms ssh-ed25519,ssh-ed25519-cert-v01@openssh.com
 Include sshd_ciphers_config
 
 #
-# Be paranoid and disable some of teh more troubling ciphers that may
+# Be paranoid and disable some of the more troubling ciphers that may
 # have crept in
 #
 
