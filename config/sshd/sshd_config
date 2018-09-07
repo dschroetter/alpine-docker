@@ -24,7 +24,18 @@ HostKeyAlgorithms ssh-ed25519,ssh-ed25519-cert-v01@openssh.com
 
 # Ciphers and keying
 
-Ciphers aes256-cbc,rijndael-cbc@lysator.liu.se,aes256-ctr,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com
+#
+# Read the supported ciphers from this include file
+#
+
+Include sshd_ciphers_config
+
+#
+# Be paranoid and disable some of teh more troubling ciphers that may
+# have crept in
+#
+
+Ciphers -aes256-cbc
 
 RekeyLimit 1G 1800
 
