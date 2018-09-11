@@ -9,7 +9,7 @@ RUN apk update
 RUN apk add --no-cache openrc vlan libressl openssh-server \
     ## Set default runlevel in /etc/rc.conf
     && sed -i \
-       -e 's/#rc_default_runlevel=".*"/rc_default_runlevel="default"'\
+       -e 's/#rc_default_runlevel=".*"/rc_default_runlevel="default"/g'\
        /etc/rc.conf
 
 ##
