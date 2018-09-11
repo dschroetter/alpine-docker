@@ -9,10 +9,17 @@ RUN apk update
 RUN apk add --no-cache openrc vlan libressl openssh-server
 
 ##
+## Create `firstboot` runlevel
+##
+
+RUN mkdir /etc/runlevels/firstboot
+
+##
 ## Add the `firstboot` file to /etc/init.d
 ##
 
 COPY config/init.d/firstboot /etc/init.d/firstboot
+COPY config/init.d/firstboot /etc/runlevels/firstboot
 
 ##
 ## Add SSHD configuration
