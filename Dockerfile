@@ -41,4 +41,4 @@ COPY config/sshd/sshd_config /etc/ssh/sshd_config
 ## INIT
 ##
 
-ENTRYPOINT [ "/sbin/openrc-init" ]
+ENTRYPOINT [ "/init" ]
