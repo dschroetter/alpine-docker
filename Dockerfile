@@ -25,7 +25,12 @@ RUN mkdir /etc/runlevels/firstboot
 ##
 
 COPY config/init.d/firstboot /etc/init.d/firstboot
-COPY config/init.d/firstboot /etc/runlevels/firstboot
+
+##
+## Add `firstboot` to default runlevel
+##
+
+RUN rc-update add firstboot default
 
 ##
 ## Add SSHD configuration
