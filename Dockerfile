@@ -9,6 +9,12 @@ RUN apk update
 RUN apk add --no-cache openrc vlan libressl openssh-server
 
 ##
+## Set up proper `inittab` file
+##
+
+COPY config/init.d/inittab /etc/inittab
+
+##
 ## Create `firstboot` runlevel
 ##
 

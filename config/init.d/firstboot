@@ -39,8 +39,8 @@ start() {
   # And some sane moduli
   #
 
-  ssh-keygen -G /etc/ssh/moduli-2048.candidates -b 2048
-  ssh-keygen -T /etc/ssh/moduli-2048 -f /etc/ssh/moduli-2048.candidates
+  #ssh-keygen -G /etc/ssh/moduli-2048.candidates -b 2048
+  #ssh-keygen -T /etc/ssh/moduli-2048 -f /etc/ssh/moduli-2048.candidates
 
 	eend $rc
 }
