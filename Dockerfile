@@ -6,7 +6,13 @@ RUN tar xzf /tmp/s6-overlay-amd64.tar.gz -C /
 RUN rm /tmp/s6-overlay-amd64.tar.gz
 
 RUN apk update
-RUN apk add --no-cache libressl openssh-server
+RUN apk add --no-cache vlan libressl openssh-server
+
+##
+## Add the `firstboot` file to /etc/init.d
+##
+
+COPY config/init.d/fistboot /etc/init.d/firstboot
 
 ##
 ## Add SSHD configuration
