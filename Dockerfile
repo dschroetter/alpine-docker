@@ -19,6 +19,13 @@ RUN apk add --no-cache openrc vlan libressl openssh-server \
 COPY config/init.d/firstboot /etc/init.d/firstboot
 
 ##
+## For testing purposes, spawn a tty
+##
+
+RUN ln -sr /etc/init.d/agetty /etc/init.d/agetty.tty1
+RUN rc-update add agetty.tty1 default
+
+##
 ## Add `firstboot` to default runlevel
 ##
 
