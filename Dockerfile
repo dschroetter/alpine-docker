@@ -22,6 +22,7 @@ COPY config/init.d/firstboot /etc/init.d/firstboot
 ## For testing purposes, spawn a tty
 ##
 
+RUN ln -s /sbin/getty /sbin/agetty
 RUN ln -s /etc/init.d/agetty /etc/init.d/agetty.tty1
 RUN rc-update add agetty.tty1 default
 
