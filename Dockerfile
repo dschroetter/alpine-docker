@@ -12,7 +12,7 @@ RUN apk add --no-cache vlan libressl openssh-server
 ## Add the `firstboot` file to /etc/init.d
 ##
 
-COPY config/init.d/fistboot /etc/init.d/firstboot
+COPY config/init.d/firstboot /etc/init.d/firstboot
 
 ##
 ## Add SSHD configuration
