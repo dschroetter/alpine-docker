@@ -6,19 +6,11 @@ RUN tar xzf /tmp/s6-overlay-amd64.tar.gz -C /
 RUN rm /tmp/s6-overlay-amd64.tar.gz
 
 RUN apk update
-RUN apk add --no-cache openrc vlan libressl openssh-server
-
-##
-## Set up proper `inittab` file
-##
-
-COPY config/init.d/inittab /etc/inittab
-
-##
-## Create `firstboot` runlevel
-##
-
-RUN mkdir /etc/runlevels/firstboot
+RUN apk add --no-cache openrc vlan libressl openssh-server \
+    ## Set default runlevel in /etc/rc.conf
+    && sed -i \
+       -e 's/#rc_default_runlevel=".*"/rc_default_runlevel="default"'\
+       /etc/rc.conf
 
 ##
 ## Add the `firstboot` file to /etc/init.d
